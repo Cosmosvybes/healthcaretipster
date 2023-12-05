@@ -7,7 +7,7 @@ app.use(express.static(path.join(__dirname, "dist")));
 app.use(express.json());
 app.use(urlencoded({ extended: true }));
 const { getDailyDecisionTips } = require("./Api/tips");
-app.get("/api/", (req, res) => {
+app.get("/", (req, res) => {
   res.sendFile(__dirname, "dist", "index.html");
 });
 app.post("/api/subscribe/tips", getDailyDecisionTips);
