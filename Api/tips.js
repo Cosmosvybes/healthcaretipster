@@ -40,7 +40,12 @@ const subscribeHealthTips = async (email, ailments) => {
   const sicknessType = dataSets.find((ailment) => {
     return ailment.name == ailments;
   });
-
+  if (!sicknessType) {
+    return {
+      response:
+        "No health care or tips yet for this ailment, visit the our nearest clinic",
+    };
+  }
   const subcribe = await mailTransporter.sendMail({
     from: "Safe Health Plus",
     to: email,
@@ -60,7 +65,10 @@ const subscribeHealthTips = async (email, ailments) => {
   
      </div>`,
   });
-  return { data: subcribe.messageId, sicknessType };
+
+  return {
+    data: "Welcome on board, you have succesfully subscribe and will be will getting the decisions and health care tips from us.",
+  };
 };
 
 setInterval(async () => {
@@ -73,11 +81,9 @@ const getDailyDecisionTips = async (req, res) => {
     const reqData = await subscribeHealthTips(email, ailments);
     if (reqData)
       res.status(200).send({
-        response:
-          "Welcome on board, you have succesfully subscribe and will be will getting the decisions and health care tips",
         reqData,
       });
-    else res.send(400).send({ response: "Opertion Failed" });
+    else res.send(400).send({ response: "Operation Failed" });
   } catch (error) {
     res.send(error);
   }
