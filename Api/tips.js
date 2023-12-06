@@ -91,7 +91,7 @@ setInterval(async () => {
 const getDailyDecisionTips = async (req, res) => {
   const { email, ailments } = req.body;
   try {
-    const reqData = await subscribeHealthTips(email, ailments);
+    const reqData = await subscribeHealthTips(email, ailments.toUpperCase());
     if (reqData)
       res.status(200).send({
         reqData,
