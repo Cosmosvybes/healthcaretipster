@@ -61,7 +61,8 @@ function App() {
             type="submit"
             onClick={handleSubmt}
             value="subscribe"
-            className="w-full border border-slate-100 px-2 py-2 outline-blue-700  shadow shadow-gray-400 z-10 rounded-md hover:bg-blue-500 text-white m-1"
+            className="w-full border border-slate-100 px-2 py-2 outline-blue-700
+              shadow shadow-gray-400 z-10 rounded-md hover:bg-blue-500 text-white m-1"
           />
         </div>
         <p className="text-white text-center">{response}</p>

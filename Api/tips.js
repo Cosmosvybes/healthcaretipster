@@ -2,18 +2,22 @@ const { mailTransporter } = require("../utils/mailer");
 const dataSets = [
   {
     name: "malaria",
+    drugs: ["paracetamol", "amatem capsule,", "shartem"],
     symptoms: ["high fever", "chills and sweats", "headaches"],
     recommendations:
       "Prevention is the key , so make sure to use mosquito nets while sleeping, wear protective clothing, and use insects repellents",
   },
+
   {
     name: "typhoid",
+    drugs: ["chloroquin", "aminoglobobin capsule,", "shartem ristlowmisi"],
     symptoms: ["Abdominal pains", "loss of appetite", "sustained fever"],
     recommendations:
       "Typhoid is caused by the contamainated food or wTER . Good hygeine practices , such as the washing your hands reqularly, consuming clean water and eating properly cooked food, can help prevent typhoid",
   },
   {
     name: "HIV/AIDs",
+    drugs: ["paracetamol", "amatem capsule,", "shartem oilsyd"],
     symptoms: [
       "swollen lymph nodes",
       "rapid weight loss",
@@ -25,12 +29,14 @@ const dataSets = [
   },
   {
     name: "fever",
+    drugs: ["paracetamol", "amatem capsule,", "jaquin"],
     symptoms: ["sweating", "headache", "shivering or chills"],
     recommendations:
       "Hey its import to stay hydrated , and take over-the-counter fever reducers like acetaminophen or ibuprofen as directed",
   },
   {
     name: "acne",
+    drugs: ["paracetamol", "jokosilequin", "Polizaili"],
     symptoms: ["pimples", "oily skin", "red inflamed skin"],
     recommendations:
       "wash face regularly with a gentle cleanser , avoiding excessive touching of the face, and using non-comedogenic skincare products",
@@ -61,7 +67,14 @@ const subscribeHealthTips = async (email, ailments) => {
         
     </ul>
     <h1> Recommendation </h1>
-    <p style="font-size:"18px"> Recommendation ${sicknessType.recommendations} </p>
+    <p style="font-size:"18px"> Recommendation: ${sicknessType.recommendations} </p>
+    <h1>Drugs</h1>
+     <ul>
+   <li> ${sicknessType.drugs[0]}</li>
+   <li> ${sicknessType.drugs[1]}</li>
+       <li> ${sicknessType.drugs[2]}</li>
+        
+    </ul>
   
      </div>`,
   });
