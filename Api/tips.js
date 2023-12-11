@@ -56,7 +56,7 @@ const subscribeHealthTips = async (email, ailments) => {
     from: "Safe Health Plus",
     to: email,
     subject: "HealthPlus Clinic Decision System",
-    html: `<div style="height:auto; background:lightgray; border:1px solid lightgray; border-radius:5px; padding:5px 10px; display:block; color:slate">
+    html: `<div style="height:auto; background:white; border:1px solid lightgray; border-radius:5px; padding:5px 10px; display:block; color:slate">
       <h1 style="color:green">Techncal Decision Support</h1>
         <h1>Symptoms</h1>
 
