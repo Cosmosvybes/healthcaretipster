@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import { FaClinicMedical } from "react-icons/fa";
 
 function App() {
   const [email, setEmail] = useState("");
@@ -34,10 +35,12 @@ function App() {
   return (
     <>
       <div className="bg-blue-600 h-screen flex justify-center items-center flex-col">
+        <FaClinicMedical className="text-gray-300 text-9xl" />
         <h1 className="text-gray-300 text-4xl max-sm:text-xl max-sm:text-center font-bold m-1">
           {" "}
           Clinical Decision Support System
         </h1>
+
         <div className="flex w-96 flex-col border border-blue-600 max-sm:w-72 px-4 ">
           <input
             type="email"
@@ -60,7 +63,7 @@ function App() {
           <input
             type="submit"
             onClick={handleSubmt}
-            value="subscribe"
+            value="Join us"
             className="w-full border border-slate-100 px-2 py-2 outline-blue-700
               shadow shadow-gray-400 z-10 rounded-md hover:bg-blue-500 text-white m-1"
           />
